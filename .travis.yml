@@ -1,0 +1,5 @@
+language: bash
+
+sudo: false
+
+script: find . -type f -name "run.sh" -exec printf '\n\n==> Running {}\n' \; -exec sh '{}' \;
