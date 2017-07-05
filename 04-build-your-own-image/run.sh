@@ -17,7 +17,7 @@ startAndFetchContainer() {
 }
 
 echo "Building image"
-docker image build --no-cache -t $imageName . > /dev/null
+docker image build --no-cache -t $imageName $(dirname $0)/. > /dev/null
 
 echo "Running app container"
 startAndFetchContainer
