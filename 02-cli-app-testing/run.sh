@@ -14,3 +14,5 @@ apt-get update > /dev/null
 apt-get install -y curl &> /dev/null # Ignore TTY errors/warnings
 curl --version
 EOF
+
+echo "All done."
