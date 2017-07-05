@@ -3,7 +3,7 @@
 url="http://localhost/jekyll/update/2017/03/05/welcome-to-jekyll.html"
 
 echo "Running jekyll container"
-docker container run --rm --name jekyll -p 80:4000 -v $(dirname $(realpath $0))/site:/site -d bretfisher/jekyll-serve > /dev/null
+docker container run --rm --name jekyll -p 80:4000 -v $(cd -P "$(dirname $0)" && pwd)/site:/site -d bretfisher/jekyll-serve > /dev/null
 
 echo "Waiting for the service to be available"
 cmd="curl --write-out %{http_code} --silent --output /dev/null $url | grep -q '200'"
