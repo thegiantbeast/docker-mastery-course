@@ -5,4 +5,6 @@ sudo: required
 services:
   - docker
 
-script: find . -type f -name "run.sh" -print0 | sort -z | xargs -0 -I % sh -c "printf '\n\n==> Running %\n' && sh %"
+script:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - find . -type f -name "run.sh" -print0 | sort -z | xargs -0 -I % sh -c "printf '\n\n==> Running %\n' && sh %"

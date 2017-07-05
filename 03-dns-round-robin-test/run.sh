@@ -17,7 +17,7 @@ while [ "${#dnsArr[@]}" -lt 2 ]; \
 do \
   dnsEntry="$(curl -s search:9200 | grep \"name\" | awk -F\" '\''{print $4}'\'')"; \
   dnsEntryTrim="${dnsEntry// /}"; \
-  [ ! -z "$dnsEntryTrim" ] && echo $dnsEntry && dnsArr[$dnsEntryTrim]=1; \
+  [ ! -z "$dnsEntryTrim" ] && dnsArr[$dnsEntryTrim]=1; \
 done \
 '
 
