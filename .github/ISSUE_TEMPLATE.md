@@ -1,15 +1,15 @@
-### Expected behavior
+### Expected behaviour
 
 Write here.
 
-### Actual behavior
+### Actual behaviour
 
 Write here.
 
-### Steps to reproduce behavior
+### Steps to reproduce behaviour
 
 Write here.
 
 ### Additional information
 
-Stacktraces, versions, suggestions how to fix, etc.
+Stack traces, versions, suggestions how to fix, etc.
