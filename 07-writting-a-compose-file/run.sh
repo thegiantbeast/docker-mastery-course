@@ -2,7 +2,7 @@
 
 exitCode=0
 
-docker-compose up -d
+docker-compose -f $(dirname $0)/docker-compose.yml up -d
 
 # wait for containers to be ready
 sleep 5
@@ -33,7 +33,7 @@ curl -s 'http://localhost:8080/core/install.php?rewrite=ok&langcode=en&profile=m
 curl -s http://localhost:8080/user/1 -c cookies.txt | grep 'Congratulations, you installed Drupal!'
 [ $? -eq 0 ] && echo "Worked!" || { echo "Something went wrong.."; exitCode=1; }
 
-docker-compose down -v
+docker-compose -f $(dirname $0)/docker-compose.yml down -v
 
 # report exit code from last curl command
 exit $exitCode
